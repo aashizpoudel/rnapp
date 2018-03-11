@@ -3,9 +3,7 @@ import { classFetchData} from '../../actions/actions';
 
 import {HomeUi} from './classui';
 const mapStateToProps = (state) => {
-	console.log('start');
-	console.log(state  );
-	console.log('end');
+
     return {
     	meta: state.meta ,
         data: state.classIsData,
@@ -17,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
        fetch:(data)=>{dispatch(classFetchData(data))},
+       
        // get:(data)=> dataClass(data),
     };
 };

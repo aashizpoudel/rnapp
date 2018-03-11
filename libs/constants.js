@@ -1,0 +1,1 @@
+export const constants = { primaryColor: '#9999ff'} ;

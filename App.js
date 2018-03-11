@@ -14,6 +14,7 @@ export default class App extends React.Component {
 
  constructor(props) {
     super(props);
+    let y = 1;
     this.state = { loading: true };
   }
 

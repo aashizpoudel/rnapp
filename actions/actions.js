@@ -1,5 +1,5 @@
 import types from './types';
-import {fetchSchedules,fetchExamSchedules }from './../libs/offline';
+import {fetchSchedules,fetchExamSchedules,getRef }from './../libs/offline';
 // import  from './../libs/offline';
 
 export function classLoaded(bool) {
@@ -65,3 +65,37 @@ export function examFetchData(data) {
     };
     
 }
+
+export function setDepartment(data){
+    return{
+        type:'change.department',
+        department:data,
+    }
+}
+
+
+export function setYear(data){
+    return{
+        type:'change.year',
+        year:data,
+    }
+}
+
+export function setMeta(data){
+  return{
+        type:'change.meta',
+        meta:data,
+    }
+}
+
+
+export function setMetaFinal(data){
+  return dispatch=> {
+      dispatch(setMeta(data));
+      dispatch(classLoaded(false));
+      dispatch(examLoaded(false));
+      dispatch(classFetchData(data));
+      dispatch(examFetchData(data));
+  }
+}
+

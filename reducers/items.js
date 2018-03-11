@@ -14,6 +14,9 @@ export function meta(state=initial.meta,action){
             return Object.assign({},state,{department:action.department});
         case 'change.year':
             return Object.assign({},state,{year:action.year});
+        case 'change.meta':
+            console.log('hit!!!',action.meta);
+            return action.meta;
         default:
             return state ;
     }

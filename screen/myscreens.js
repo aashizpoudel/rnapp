@@ -20,4 +20,12 @@ export class ExamSchedule extends Component {
   }
 }
 
+import Choose from './../components/chooseraction';
 
+export class Chooser extends Component {
+  render(){
+    return (
+        <Choose/>
+      )
+  }
+}

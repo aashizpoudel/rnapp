@@ -1,9 +1,17 @@
 import OfflineFirstAPI from 'react-native-offline-api';
  
 // ... API and services configurations
- 
-
-
+import firebase from '@firebase/app';
+import '@firebase/firestore';
+ const config = {
+    apiKey: "AIzaSyD-Hdib7m1PjihntLLvixyMVBus5nxnD6U",
+    authDomain: "tung-4b952.firebaseapp.com",
+    databaseURL: "https://tung-4b952.firebaseio.com",
+    projectId: "tung-4b952",
+    storageBucket: "",
+    messagingSenderId: "1008568347863"
+  };
+  firebase.initializeApp(config);
 
 const API_OPTIONS = {
     domains: { default: 'https://erc-routine-project.firebaseio.com' },
@@ -118,4 +126,10 @@ function processExam(request){
         }
     }
 
+
+export function getRef(data){
+ 
+    let ref = firebase.firestore().collection(data);
+    return ref;
+}
 

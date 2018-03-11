@@ -3,9 +3,7 @@ import { examFetchData} from '../../actions/actions';
 
 import {HomeUi} from './examui';
 const mapStateToProps = (state) => {
-	console.log('start');
-	console.log(state  );
-	console.log('end');
+	
     return {
     	meta: state.meta ,
         data: state.examIsData,

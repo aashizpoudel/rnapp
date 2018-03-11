@@ -1,14 +1,23 @@
-import React from 'react';
-import {ChooserUI} from '../components/chooser';
-import { TabNavigator,StackNavigator,DrawerNavigator,DrawerItems,SafeAreaView } from  'react-navigation';
 
-import { ClassSchedule,ExamSchedule } from './../screen/myscreens';
+import {ChooserUI} from '../components/chooser';
+import { TabNavigator,StackNavigator } from  'react-navigation';
+
+import { ClassSchedule,ExamSchedule, Chooser } from './../screen/myscreens';
+
+import {constants} from './../libs/constants';
+
 
 
 
 let cstack = StackNavigator({
   chome:{screen:ClassSchedule}
-});
+},{navigationOptions:{title:'Class Schedule',headerStyle: {
+        backgroundColor: constants.primaryColor,
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },}});
 
 
 let estack = StackNavigator({
@@ -18,11 +27,16 @@ let estack = StackNavigator({
 const RootT = TabNavigator({
 	Home: {screen: cstack },
 	Exam: {screen: estack},
-  	Tung: {screen: ChooserUI},
+  Choose: {screen: Chooser},
 },{
-    tabBarPosition: 'bottom',
-    animationEnabled: true,
-    swipeEnabled: false,} );
+    tabBarOptions:{
+      style:{
+        backgroundColor:constants.primaryColor,
+      }
+    }
+ ,tabBarPosition:'bottom',
+    swipeEnabled:false,
+});
 
 export const Root = StackNavigator({
   Home:{screen:RootT}
