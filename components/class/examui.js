@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { List, ListItem } from  'react-native-elements';
+import {  View } from 'react-native';
+import { List, ListItem,Text } from  'react-native-elements';
 
 // import { StackNavigator } from 'react-navigation';
 
@@ -24,7 +24,7 @@ constructor(props) {
 				<View>
 					<View>
 						
-						<Text> {this.props.meta.department}={this.props.meta.year}</Text>
+						<Text h4 style={{textAlign:'center'}}> {this.props.meta.department} {this.props.meta.year}</Text>
 					</View>
 					<View>
 						{this.props.loaded == true ?

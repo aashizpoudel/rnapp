@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View,Picker } from 'react-native';
 import { List,ListItem } from  'react-native-elements';
-
+import { DAYS } from './../../libs/constants';
 // import { StackNavigator } from 'react-navigation';
 
 
@@ -19,6 +19,17 @@ constructor(props) {
   	
   		// this.props.get(data);
   	}
+_renderPicker(){
+	return <Picker selectedValue={this.state.today} onValueChange={
+		(value)=>this.setState({today:value})
+		}>
+		{
+			DAYS.map((l,i)=>
+			<Picker.Item key={i} value={i+1} label={l} />
+			)
+		}
+	</Picker> ;
+}
 	render(){
 		let data = this.props.data[this.state.today];
 			return(
@@ -26,16 +37,18 @@ constructor(props) {
 					<View style={{
 						marginTop:15,borderColor:'blue'}
 					}>
-						<Picker > 
-							<Picker.Item value='1' label='Sunday'/>
-						</Picker>
+					{
+						this._renderPicker() 
+					}
 					</View>
 					<View>
 						{this.props.loaded == true ?
 							(<List>
-							{ data.map(
+							{ 
+								data == undefined ? <Text>Hurray Holiday!!</Text> :
+								data.map(
 									(l,i)=> 
-									<ListItem key={i} title={l.class} subtitle={l.from} />
+									<ListItem key={i} title={l.class} subtitle={l.time} />
 
 								)}
 							</List>) : <Text>Not Loaded!!</Text>}

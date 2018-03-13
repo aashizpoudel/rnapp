@@ -22,7 +22,13 @@ let cstack = StackNavigator({
 
 let estack = StackNavigator({
   ehome:{screen:ExamSchedule}
-});
+},{navigationOptions:{title:'Exam Schedule',headerStyle: {
+        backgroundColor: constants.primaryColor,
+      },
+      headerTintColor: '#fff',
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },}});
 
 const RootT = TabNavigator({
 	Home: {screen: cstack },
