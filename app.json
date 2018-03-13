@@ -4,6 +4,12 @@
     "slug": "erc-routine",
     "sdkVersion": "25.0.0",
     "privacy": "public",
-    "icon" : "./assets/icon.png"
+    "icon" : "./assets/icon.png",
+    "ios": {
+      "bundleIdentifier": "com.rnapp.ercroutine"
+    },
+    "android": {
+      "package": "com.rnapp.ercroutine"
+    }
   }
 }
