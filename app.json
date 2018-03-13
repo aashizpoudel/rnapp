@@ -1,5 +1,9 @@
 {
   "expo": {
-    "sdkVersion": "25.0.0"
+    "name": "ERC Routine",
+    "slug": "erc-routine",
+    "sdkVersion": "25.0.0",
+    "privacy": "public",
+    "icon" : "./assets/icon.png"
   }
 }
