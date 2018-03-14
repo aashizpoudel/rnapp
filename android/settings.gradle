@@ -1,0 +1,3 @@
+rootProject.name = 'ercroutine'
+
+include ':app'
