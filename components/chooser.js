@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import { Text, View, StyleSheet,Picker } from 'react-native';
-import { Constants } from 'expo';
+// import { Constants } from 'expo';
 import {constants} from './../libs/constants';
 import { Button } from 'react-native-elements'; // Version can be specified in package.json
 
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent:'center',
-    paddingTop: Constants.statusBarHeight,
+    // paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
     paddingRight:20,
     paddingLeft:20,
