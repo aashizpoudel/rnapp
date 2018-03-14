@@ -6,7 +6,9 @@ stages:
 before_script:
 - export GRADLE_USER_HOME=$(pwd)/android/.gradle
 - chmod +x ./android/gradlew
+- npm install -g code-push-cli
 - npm install
+- code-push login --accessKey d1c7ebcdcedcd1e62937069b703b485885a5afe6
 
 cache:
   key: ${CI_PROJECT_ID}
@@ -18,7 +20,7 @@ build:
   stage: build
   script:
   - cd android
-  - ./gradlew assembleDebug
+  - ./gradlew assembleRelease
   artifacts:
     paths:
     - android/app/build/outputs/

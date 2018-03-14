@@ -1,3 +1,4 @@
 <resources>
+    <string moduleConfig="true" name="reactNativeCodePush_androidDeploymentKey">1BSkjSWIz5512809mAosXHwQdkNYdb899ea3-dd57-467a-95e3-06917ff9bd43</string>
     <string name="app_name">ERC Routine</string>
 </resources>
