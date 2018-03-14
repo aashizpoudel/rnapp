@@ -1,4 +1,4 @@
-image: registry.gitlab.com/peterreisz/gitlab-ci-runner-java-node-android:master
+image: soluto/android-nodejs
 
 stages:
 - build
@@ -12,6 +12,7 @@ cache:
   key: ${CI_PROJECT_ID}
   paths:
   - ./android/gradle/
+  - ./node_modules/
 
 build:
   stage: build
