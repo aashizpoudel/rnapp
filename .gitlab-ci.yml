@@ -1,0 +1,24 @@
+image: soluto/android-nodejs
+
+stages:
+- build
+
+before_script:
+- export GRADLE_USER_HOME=$(pwd)/android/.gradle
+- chmod +x ./android/gradlew
+- npm install
+
+cache:
+  key: ${CI_PROJECT_ID}
+  paths:
+  - ./android/gradle/
+  - ./node_modules/
+
+build:
+  stage: build
+  script:
+  - cd android
+  - ./gradlew assembleRelease
+  artifacts:
+    paths:
+    - app/build/outputs/
