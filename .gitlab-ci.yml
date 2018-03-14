@@ -1,4 +1,4 @@
-image: registry.gitlab.com/motorica-org/gitlab-ci-android:master
+image: registry.gitlab.com/peterreisz/gitlab-ci-runner-java-node-android:master
 
 stages:
 - build
